@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="temp"></div>
+    <script
+  src="https://code.jquery.com/jquery-3.6.4.js"
+  integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+  crossorigin="anonymous"></script>
+    <script>
+    var city = prompt('Enter City')
+    $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/weather?city=' + city,
+        headers: { 'X-Api-Key': 'btuYpdHPU3VJiW7StgDr/Q==JuQ9kjTf8JH1IMKd'},
+        contentType: 'application/json',
+        success: function(result) {
+            document.getElementById('temp').innerHTML = `${city}'s temperature is ${result.temp}°C`
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+    </script>
+</body>
+</html>
