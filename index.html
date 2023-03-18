@@ -8,17 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <div id="loading" style="height:100px;width:100px;margin:auto;margin-top:300px"></div>
     <div id="temp"></div>
     <script
   src="https://code.jquery.com/jquery-3.6.4.js"
   integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
   crossorigin="anonymous"></script>
     <script>
-    if(document.getElementById('temp') = '') {
-        document.getElementById('loading').style.background = "url(loading.gif)";
-    }
-    else {
     var city = prompt('Enter City')
     $.ajax({
         method: 'GET',
@@ -31,7 +26,7 @@
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-    });}
+    });
     </script>
 </body>
 </html>
