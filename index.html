@@ -14,6 +14,10 @@
   integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
   crossorigin="anonymous"></script>
     <script>
+    if(document.getElementById('temp') = '') {
+        document.getElementById('loading').background = "url(loading.gif)";
+    }
+    else {
     var city = prompt('Enter City')
     $.ajax({
         method: 'GET',
@@ -26,7 +30,7 @@
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-    });
+    });}
     </script>
 </body>
 </html>
